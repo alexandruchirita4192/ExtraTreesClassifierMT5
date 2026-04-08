@@ -346,7 +346,13 @@ def walk_forward_report(
 
 def export_to_onnx(model: ExtraTreesClassifier, output_path: Path) -> None:
     initial_types = [("float_input", FloatTensorType([1, len(FEATURE_COLS)]))]
-    onx = convert_sklearn(model, initial_types=initial_types, target_opset=15)
+    options = {id(model): {"zipmap": False}}
+    onx = convert_sklearn(
+        model,
+        initial_types=initial_types,
+        options=options,
+        target_opset=15,
+    )
     output_path.write_bytes(onx.SerializeToString())
 
 
