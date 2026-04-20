@@ -1,5 +1,7 @@
 # ExtraTrees MT5 strategy files
 
+There are 2 versions of trainer for ONNX in Python and MT5 EA, without scale invariant and for scale invariant. The Python file and the MT5 EA file must be aligned for better performance.
+
 ## Files
 - `train_mt5_extratrees_classifier.py`
 - `MT5_ExtraTrees_Classifier_ONNX_Strategy.mq5`
